@@ -2,16 +2,28 @@ import React from 'react';
 import IngredientsLine from './IngredientsLine.jsx';
 
 const RecipeCreator = props => {
+
+  const ingredients = [];
+  for (let i = 0; i < props.ingredientList; i++) {
+    ingredients.push(<IngredientsLine key={`Ingredient List ${i}`}/>);
+  }
+
   return(
     <div className="recipeCreatorContainer" style={styles.container}>
       <h2>Create a Recipe</h2>
-      <label>
-        Recipe
+      <div>
+        <h4>Title</h4>
         <input id="text-box" placeholder="Recipe"/>
-      </label>
-      <IngredientsLine />
-      <button id="submit-btn" style={styles.btn}>Add Ingredient</button>
-      <input id="instructions-box" style={styles.instructions}/>
+      </div>
+      <div>
+        <h4>Ingredients</h4>
+        { ingredients }
+      </div>
+      <button id="submit-btn" style={styles.btn} onClick={props.handleClick}>Add Ingredient</button>
+      <div>
+        <h4>Instructions</h4>
+        <textarea id="instructions-box" style={styles.instructions}/>
+      </div>
       <button id="submit-btn" style={styles.btn}>Add Recipe</button>
     </div>
   )
@@ -26,17 +38,18 @@ const styles = {
 
   btn: {
     fontSize: '14px',
-    width: '100px'
+    width: '100px',
+    marginTop: '10px'
   },
 
   instructions: {
     width: '400px',
-    height: '400px'
+    height: '400px',
+    whiteSpace: 'pre'
   },
 
 }
 
-export default RecipeCreator
+export default RecipeCreator;
 
 // add onChange and onClick event handlers to update state with inputted text
-// add onClick event handler to add more 'amt' and 'ingredient' text boxes

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import MainContainer from './containers/MainContainer.jsx';
 
