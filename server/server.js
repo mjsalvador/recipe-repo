@@ -5,8 +5,6 @@ const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
-// const apiRouter = require('./routes/api');
-
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
