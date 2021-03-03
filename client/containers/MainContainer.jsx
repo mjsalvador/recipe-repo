@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 // import child components
+import RecipeCards from '../components/RecipeCards.jsx';
+import RecipeCreator from '../components/RecipeCreator.jsx';
+// import store from '../store.js';
 
 const mapStateToProps = state => ({
 
@@ -17,11 +20,19 @@ class MainContainer extends Component {
 
   render() {
     return(
-      <div>
-
+      <div className="container">
+        <div className="outerbox">
+          <h1 id="header">Online Recipe Webapp</h1>
+          <RecipeCreator />
+          <RecipeCards />
+        </div>
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
+// react rendering
+export default MainContainer;
+
+// redux rendering
+// export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
