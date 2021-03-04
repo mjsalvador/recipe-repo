@@ -32,5 +32,5 @@ export const writeInstructions = (instructions) => ({
 
 export const addRecipe = () => ({
   type: types.ADD_RECIPE,
-})
+});
 

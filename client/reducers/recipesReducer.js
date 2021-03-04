@@ -7,11 +7,13 @@ const initialState = {
   instructions: '',
   ingredientList : 1,
   recipeList: [],
+  totalRecipes: 0,
 };
 
 const recipesReducer = (state = initialState, action) => {
   
   let ingredients;
+  let recipeList;
   
   switch (action.type) {
     
@@ -71,7 +73,18 @@ const recipesReducer = (state = initialState, action) => {
     }
 
     case types.ADD_RECIPE: {
-
+      const totalRecipes = state.totalRecipes + 1;
+      const newRecipe = {
+        recipeId : totalRecipes,
+        recipe : state.recipe,
+      };
+      recipeList = state.recipeList.slice();
+      recipeList.push(newRecipe);
+      return {
+        ...state,
+        recipeList,
+        totalRecipes
+      }
     }
 
     default: {

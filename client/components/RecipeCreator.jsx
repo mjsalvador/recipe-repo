@@ -25,12 +25,12 @@ const RecipeCreator = props => {
         <h4>Ingredients</h4>
         { ingredients }
       </div>
-      <button id="submit-btn" style={styles.btn} onClick={props.handleClick}>Add Ingredient</button>
+      <button id="submit-btn" style={styles.btn} onClick={props.handleClickAddIngredient}>Add Ingredient</button>
       <div>
         <h4>Instructions</h4>
         <textarea id="instructions-box" style={styles.instructions} onChange={props.handleChangeInst}/>
       </div>
-      <button id="submit-btn" style={styles.btn}>Add Recipe</button>
+      <button id="submit-btn" style={styles.btn} onClick={props.handleClickAddRecipe}>Add Recipe</button>
     </div>
   )
 };

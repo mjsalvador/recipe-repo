@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import * as actionCreator from '../actions/actions.js';
 
 const IngredientsLine = props => {
@@ -8,7 +7,6 @@ const IngredientsLine = props => {
       <label>
         Qty
         <input id="text-box" placeholder="Amt" onChange={(e) => props.handleChangeQty(e, props.id)}/>
-        {/* <input id="text-box" placeholder="Amt" onChange={props.handleChangeQty}/> */}
       </label>
       <label>
         Measurement
