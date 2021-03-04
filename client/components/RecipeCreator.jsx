@@ -5,7 +5,13 @@ const RecipeCreator = props => {
 
   const ingredients = [];
   for (let i = 0; i < props.ingredientList; i++) {
-    ingredients.push(<IngredientsLine key={`Ingredient List ${i}`}/>);
+    ingredients.push(<IngredientsLine 
+      handleChangeQty={props.handleChangeQty}
+      handleChangeMsrmt={props.handleChangeMsrmt}
+      handleChangeIngr={props.handleChangeIngr}
+      id={props.ingredients[i].line}
+      key={i}/>
+    );
   }
 
   return(
@@ -13,7 +19,7 @@ const RecipeCreator = props => {
       <h2>Create a Recipe</h2>
       <div>
         <h4>Title</h4>
-        <input id="text-box" placeholder="Recipe"/>
+        <input id="text-box" placeholder="Recipe" onChange={props.handleChangeRecipe}/>
       </div>
       <div>
         <h4>Ingredients</h4>
@@ -22,7 +28,7 @@ const RecipeCreator = props => {
       <button id="submit-btn" style={styles.btn} onClick={props.handleClick}>Add Ingredient</button>
       <div>
         <h4>Instructions</h4>
-        <textarea id="instructions-box" style={styles.instructions}/>
+        <textarea id="instructions-box" style={styles.instructions} onChange={props.handleChangeInst}/>
       </div>
       <button id="submit-btn" style={styles.btn}>Add Recipe</button>
     </div>

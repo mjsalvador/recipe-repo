@@ -1,3 +1,10 @@
 // add action constants here
 
+export const WRITE_RECIPE = 'WRITE_RECIPE';
+// export const WRITE_INGREDIENTS = 'WRITE_INGREDIENTS';
+export const WRITE_QTY = 'WRITE_QTY';
+export const WRITE_MEASUREMENT = 'WRITE_MEASUREMENT';
+export const WRITE_INGREDIENT = 'WRITE_INGREDIENT';
 export const ADD_INGREDIENT_LINE = 'ADD_INGREDIENT_LINE';
+export const WRITE_INSTRUCTIONS = 'WRITE_INSTRUCTIONS';
+export const ADD_RECIPE = 'ADD_RECIPE';
